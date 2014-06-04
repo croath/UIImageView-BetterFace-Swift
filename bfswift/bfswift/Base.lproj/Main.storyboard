@@ -19,7 +19,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vqf-Ly-R4R">
                                 <rect key="frame" x="60" y="20" width="200" height="200"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="as4-Pw-MvT">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="as4-Pw-MvT" customClass="BFImageView" customModule="bfswift" customModuleProvider="target">
                                 <rect key="frame" x="311" y="20" width="200" height="200"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AspectFill" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rli-cY-gAY">
@@ -37,16 +37,56 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="76v-5R-U8f">
                                 <rect key="frame" x="0.0" y="276" width="568" height="44"/>
                                 <items>
-                                    <barButtonItem title="Up1" id="2GZ-c5-EyD"/>
-                                    <barButtonItem tag="1" title="Up2" id="Pqr-SH-vCR"/>
-                                    <barButtonItem tag="2" title="Up3" id="yK3-G6-glf"/>
-                                    <barButtonItem tag="3" title="Up4" id="qoo-oH-DKL"/>
-                                    <barButtonItem tag="4" title="Land1" id="cTe-uQ-oMn"/>
-                                    <barButtonItem tag="5" title="Land2" id="wcl-aY-IZv"/>
-                                    <barButtonItem tag="6" title="Land3" id="LG4-36-vGg"/>
-                                    <barButtonItem tag="7" title="Land4" id="odn-1i-oYh"/>
-                                    <barButtonItem tag="8" title="Multi1" id="D0V-re-1qi"/>
-                                    <barButtonItem tag="9" title="Multi2" id="QrC-j1-034"/>
+                                    <barButtonItem title="Up1" id="2GZ-c5-EyD">
+                                        <connections>
+                                            <action selector="tabPressed:" destination="vXZ-lx-hvc" id="ZIa-0a-Rib"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="1" title="Up2" id="Pqr-SH-vCR">
+                                        <connections>
+                                            <action selector="tabPressed:" destination="vXZ-lx-hvc" id="dai-nB-IXm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="2" title="Up3" id="yK3-G6-glf">
+                                        <connections>
+                                            <action selector="tabPressed:" destination="vXZ-lx-hvc" id="e3y-fb-GW6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="3" title="Up4" id="qoo-oH-DKL">
+                                        <connections>
+                                            <action selector="tabPressed:" destination="vXZ-lx-hvc" id="qnM-dF-Bmm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="4" title="Land1" id="cTe-uQ-oMn">
+                                        <connections>
+                                            <action selector="tabPressed:" destination="vXZ-lx-hvc" id="YNm-fW-kfA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="5" title="Land2" id="wcl-aY-IZv">
+                                        <connections>
+                                            <action selector="tabPressed:" destination="vXZ-lx-hvc" id="Vof-CB-dzq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="6" title="Land3" id="LG4-36-vGg">
+                                        <connections>
+                                            <action selector="tabPressed:" destination="vXZ-lx-hvc" id="Lke-by-IpD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="7" title="Land4" id="odn-1i-oYh">
+                                        <connections>
+                                            <action selector="tabPressed:" destination="vXZ-lx-hvc" id="S7f-qk-Di0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="8" title="Multi1" id="D0V-re-1qi">
+                                        <connections>
+                                            <action selector="tabPressed:" destination="vXZ-lx-hvc" id="YzR-yo-Mk2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="9" title="Multi2" id="QrC-j1-034">
+                                        <connections>
+                                            <action selector="tabPressed:" destination="vXZ-lx-hvc" id="gYd-dw-ZGD"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -55,6 +95,10 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="568" height="320"/>
+                    <connections>
+                        <outlet property="view0" destination="vqf-Ly-R4R" id="cXv-9u-NJW"/>
+                        <outlet property="view1" destination="as4-Pw-MvT" id="f9g-kI-aur"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

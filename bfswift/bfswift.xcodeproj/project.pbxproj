@@ -22,7 +22,7 @@
 		273877AF193E40E300737DD8 /* up2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 273877A5193E40E300737DD8 /* up2.jpg */; };
 		273877B0193E40E300737DD8 /* up3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 273877A6193E40E300737DD8 /* up3.jpg */; };
 		273877B1193E40E300737DD8 /* up4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 273877A7193E40E300737DD8 /* up4.jpg */; };
-		273877B3193E40FA00737DD8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 273877B2193E40FA00737DD8 /* Info.plist */; };
+		27428150193EA6F70097D0E2 /* BFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2742814F193EA6F70097D0E2 /* BFImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,7 @@
 		273877A5193E40E300737DD8 /* up2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = up2.jpg; sourceTree = "<group>"; };
 		273877A6193E40E300737DD8 /* up3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = up3.jpg; sourceTree = "<group>"; };
 		273877A7193E40E300737DD8 /* up4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = up4.jpg; sourceTree = "<group>"; };
-		273877B2193E40FA00737DD8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2742814F193EA6F70097D0E2 /* BFImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,6 @@
 				2738777D193E409300737DD8 /* AppDelegate.swift */,
 				2738777F193E409300737DD8 /* ViewController.swift */,
 				27387781193E409300737DD8 /* Main.storyboard */,
-				273877B2193E40FA00737DD8 /* Info.plist */,
 				27387784193E409300737DD8 /* Images.xcassets */,
 				2738777B193E409300737DD8 /* Supporting Files */,
 			);
@@ -178,6 +177,7 @@
 		273877B4193E410E00737DD8 /* BetterFaceClass */ = {
 			isa = PBXGroup;
 			children = (
+				2742814F193EA6F70097D0E2 /* BFImageView.swift */,
 			);
 			path = BetterFaceClass;
 			sourceTree = "<group>";
@@ -274,7 +274,6 @@
 				273877A9193E40E300737DD8 /* l2.jpg in Resources */,
 				273877AB193E40E300737DD8 /* l4.jpg in Resources */,
 				273877AF193E40E300737DD8 /* up2.jpg in Resources */,
-				273877B3193E40FA00737DD8 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +293,7 @@
 			files = (
 				27387780193E409300737DD8 /* ViewController.swift in Sources */,
 				2738777E193E409300737DD8 /* AppDelegate.swift in Sources */,
+				27428150193EA6F70097D0E2 /* BFImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +481,7 @@
 				27387796193E409300737DD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27387797193E409300737DD8 /* Build configuration list for PBXNativeTarget "bfswiftTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +490,7 @@
 				27387799193E409300737DD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
