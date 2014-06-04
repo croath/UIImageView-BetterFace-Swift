@@ -14,7 +14,7 @@ class ViewController: UIViewController {
                             
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.view0.layer.borderColor = UIColor.grayColor().CGColor
         self.view0.layer.borderWidth = 0.5
         self.view0.contentMode = UIViewContentMode.ScaleAspectFill
