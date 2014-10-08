@@ -9,8 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var view0 : UIImageView
-    @IBOutlet var view1 : BFImageView
+    @IBOutlet var view0 : UIImageView!
+    @IBOutlet var view1 : BFImageView!
                             
     override func viewDidLoad() {
         super.viewDidLoad()

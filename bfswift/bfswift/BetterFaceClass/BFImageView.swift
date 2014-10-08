@@ -46,7 +46,7 @@ class BFImageView: UIImageView {
                     self.detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: opts)
                 }
                 
-                var features: AnyObject[] = self.detector!.featuresInImage(image)
+                var features: [AnyObject] = self.detector!.featuresInImage(image)
                 
                 if features.count == 0 {
                     println("no faces")
@@ -56,15 +56,15 @@ class BFImageView: UIImageView {
                         })
                 } else {
                     println("succeed \(features.count) faces")
-                    var imgSize = CGSizeMake(Float(CGImageGetWidth(aImage.CGImage)), Float(CGImageGetHeight(aImage.CGImage)))
+                    var imgSize = CGSize(width: Double(CGImageGetWidth(aImage.CGImage)), height: (Double(CGImageGetHeight(aImage.CGImage))))
                     self.markAfterFaceDetect(features, size: imgSize)
                 }
             })
     }
     
-    func markAfterFaceDetect(features: AnyObject[], size: CGSize) {
-        var fixedRect = CGRectMake(MAXFLOAT, MAXFLOAT, 0, 0)
-        var rightBorder: Float = 0, bottomBorder: Float = 0
+    func markAfterFaceDetect(features: [AnyObject], size: CGSize) {
+        var fixedRect = CGRect(x: Double(MAXFLOAT), y: Double(MAXFLOAT), width: 0, height: 0)
+        var rightBorder:Double = 0, bottomBorder: Double = 0
         for f: AnyObject in features {
             var oneRect = CGRectMake(f.bounds.origin.x, f.bounds.origin.y, f.bounds.size.width, f.bounds.size.height)
             oneRect.origin.y = size.height - oneRect.origin.y - oneRect.size.height
@@ -72,12 +72,12 @@ class BFImageView: UIImageView {
             fixedRect.origin.x = min(oneRect.origin.x, fixedRect.origin.x)
             fixedRect.origin.y = min(oneRect.origin.y, fixedRect.origin.y)
             
-            rightBorder = max(oneRect.origin.x + oneRect.size.width, rightBorder)
-            bottomBorder = max(oneRect.origin.y + oneRect.size.height, bottomBorder)
+            rightBorder = max(Double(oneRect.origin.x) + Double(oneRect.size.width), rightBorder)
+            bottomBorder = max(Double(oneRect.origin.y) + Double(oneRect.size.height), bottomBorder)
         }
         
-        fixedRect.size.width = rightBorder - fixedRect.origin.x
-        fixedRect.size.height = bottomBorder - fixedRect.origin.y
+        fixedRect.size.width = CGFloat(Int(rightBorder) - Int(fixedRect.origin.x))
+        fixedRect.size.height = CGFloat(Int(bottomBorder) - Int(fixedRect.origin.y))
         
         var fixedCenter: CGPoint = CGPointMake(fixedRect.origin.x + fixedRect.size.width / 2.0,
             fixedRect.origin.y + fixedRect.size.height / 2.0)
@@ -104,7 +104,7 @@ class BFImageView: UIImageView {
             fixedCenter.x = finalSize.width / size.width * fixedCenter.x
             fixedCenter.y = finalSize.width / size.width * fixedCenter.y
             
-            offset.y = fixedCenter.y - self.bounds.size.height * Float(1-GOLDEN_RATIO)
+            offset.y = CGFloat(fixedCenter.y - self.bounds.size.height * CGFloat(1-GOLDEN_RATIO))
             if (offset.y < 0) {
                 offset.y = 0
             } else if (offset.y + self.bounds.size.height > finalSize.height){
