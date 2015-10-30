@@ -33,30 +33,30 @@ class BFImageView: UIImageView {
     }
     
     func faceDetect(aImage: UIImage){
-        var queue: dispatch_queue_t = dispatch_queue_create("com.croath.betterface.queue", DISPATCH_QUEUE_CONCURRENT)
+        let queue: dispatch_queue_t = dispatch_queue_create("com.croath.betterface.queue", DISPATCH_QUEUE_CONCURRENT)
         dispatch_async(queue,
             {
                 var image = aImage.CIImage
                 if image == nil {
-                    image = CIImage(CGImage: aImage.CGImage)
+                    image = CIImage(CGImage: aImage.CGImage!)
                 }
                 
                 if self.detector == nil {
-                    var opts = [(self.fast ? CIDetectorAccuracyLow : CIDetectorAccuracyHigh): CIDetectorAccuracy]
+                    let opts = [(self.fast ? CIDetectorAccuracyLow : CIDetectorAccuracyHigh): CIDetectorAccuracy]
                     self.detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: opts)
                 }
                 
-                var features: [AnyObject] = self.detector!.featuresInImage(image)
+                let features: [AnyObject] = self.detector!.featuresInImage(image!)
                 
                 if features.count == 0 {
-                    println("no faces")
+                    print("no faces")
                     dispatch_async(dispatch_get_main_queue(),
                         {
                             self.imageLayer().removeFromSuperlayer()
                         })
                 } else {
-                    println("succeed \(features.count) faces")
-                    var imgSize = CGSize(width: Double(CGImageGetWidth(aImage.CGImage)), height: (Double(CGImageGetHeight(aImage.CGImage))))
+                    print("succeed \(features.count) faces")
+                    let imgSize = CGSize(width: Double(CGImageGetWidth(aImage.CGImage)), height: (Double(CGImageGetHeight(aImage.CGImage))))
                     self.markAfterFaceDetect(features, size: imgSize)
                 }
             })
@@ -116,7 +116,7 @@ class BFImageView: UIImageView {
         
         dispatch_async(dispatch_get_main_queue(),
             {
-                var layer: CALayer = self.imageLayer()
+                let layer: CALayer = self.imageLayer()
                 layer.frame = CGRectMake(offset.x, offset.y, finalSize.width, finalSize.height)
                 layer.contents = self.image.CGImage
             })
@@ -126,12 +126,12 @@ class BFImageView: UIImageView {
         if let sublayers = self.layer.sublayers {
             for layer: AnyObject in sublayers {
                 if layer.name == BETTER_LAYER_NAME {
-                    return layer as CALayer
+                    return layer as! CALayer
                 }
             }
         }
         
-        var layer = CALayer()
+        let layer = CALayer()
         layer.name = BETTER_LAYER_NAME
         layer.actions =
             [
