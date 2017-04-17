@@ -3,7 +3,7 @@ UIImageView-BetterFace-Swift
 
 The Swift version of https://github.com/croath/UIImageView-BetterFace
 
-##Why?
+## Why?
 
  - Have problems showing the resized image previews? 
  - People in the preview only have chins but not faces?
@@ -11,11 +11,11 @@ The Swift version of https://github.com/croath/UIImageView-BetterFace
 
 Try UIImageView-BetterFace!
 
-##Preview
+## Preview
 
 ![preview](https://raw.github.com/croath/UIImageView-BetterFace/master/doc/preview.png)
 
-##How?
+## How?
 
  1. drag `BFImageView.swift` to your project
  2. use `BFImageView` subclass
